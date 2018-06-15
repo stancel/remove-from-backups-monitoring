@@ -1,0 +1,9 @@
+---
+# handlers file for remove-config-from-nagios-server
+
+- name: reload-nagios
+  become: true
+  become_method: sudo
+  action: service name=nagios state=restarted
+
+

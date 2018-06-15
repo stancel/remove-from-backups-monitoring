@@ -1,0 +1,9 @@
+---
+# vars file for remove-config-from-nagios-server
+
+#####     Required Variables      #####
+# Fill in appropriate values below unless passing from a higher precedence
+
+# The hostname of the machine you are removing from Nagios monitoring. Host names should not have spaces in them.
+host_name: "my-server"   
+

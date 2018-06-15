@@ -1,0 +1,12 @@
+---
+
+- hosts: backups monitoring
+  remote_user: brad
+  become: true
+  become_method: sudo
+  roles:
+    - remove-config-from-bareos-server
+    - remove-config-from-nagios-server
+ 
+
+

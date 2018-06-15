@@ -1,0 +1,22 @@
+---
+# handlers file for remove-config-from-bareos-server
+
+- name: restart bareos-dir
+  become: true
+  become_method: sudo
+  service: name=bareos-dir state=restarted
+  listen: "restart bareos all"
+
+- name: restart bareos-sd
+  become: true
+  become_method: sudo
+  service: name=bareos-sd state=restarted
+  listen: "restart bareos all"
+
+- name: restart bareos-fd
+  become: true
+  become_method: sudo
+  service: name=bareos-sd state=restarted
+  listen: "restart bareos all"
+
+

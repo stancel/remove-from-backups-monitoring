@@ -1,0 +1,32 @@
+galaxy_info:
+  author: Brad Stancel
+  description: Basic Ansible role to remove a server from being monitored by Nagios
+  company: YourOnlineDept.com
+
+
+  license: BSD
+
+  min_ansible_version: 2.4
+
+  #github_branch:
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: RHEL
+    versions:
+    - all
+
+  galaxy_tags: 
+    - nagios-server
+    - monitoring
+
+dependencies: []
+

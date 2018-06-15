@@ -1,0 +1,13 @@
+---
+# tasks file for remove-config-from-nagios-server
+
+- name: "Removing the server config from Nagios Server"
+  become: true
+  become_method: sudo
+  file:
+    path: "/usr/local/nagios/etc/servers/{{ remote_host_name }}.cfg"
+    state: absent
+    owner: root
+    group: root
+  notify: reload-nagios
+

@@ -1,0 +1,8 @@
+---
+# defaults file for remove-config-from-bareos-server
+
+# The Bareos Archive Device location (or file path) where the backups volumes are stored for this host. 
+# *** Make sure you do NOT put a path here that has backup volumes for other hosts ***
+archive_device: "/z-storage/backups/{{ host_name }}"
+
+
