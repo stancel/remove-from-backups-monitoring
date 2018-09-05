@@ -8,7 +8,7 @@ How to Use
 
 To use this playbook just run this command.
 
-	1. ansible-galaxy install -r requirements.yml -p roles/ 
+	1. ansible-galaxy install -r requirements.yml -p roles/ (only needed if you want to download the roles)
 	2. ansible-playbook master.yml -e @vars/all_vars.yml -i hosts/production
 
 

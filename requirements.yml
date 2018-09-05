@@ -18,15 +18,17 @@
 #  version: 0.0.3
 
 
-- name: remove-config-from-bareos-server
-  src: https://github.com/stancel/remove-config-from-bareos-server
-  version: 1.0.0
+#- name: remove-config-from-bareos-server
+#  src: https://github.com/stancel/remove-config-from-bareos-server
+  #version: 1.0.0
+
+- src: stancel.remove-config-from-bareos-server
   
-- name: remove-config-from-nagios-server
-  src: https://github.com/stancel/remove-config-from-nagios-server
-  version: 1.0.0
+#- name: remove-config-from-nagios-server
+#  src: https://github.com/stancel/remove-config-from-nagios-server
+  #version: 1.0.0
 
-
+- src: stancel.remove-config-from-nagios-server
 
 
 
