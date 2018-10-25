@@ -1,11 +1,14 @@
 ---
 
-- hosts: backups monitoring
+- hosts: monitoring
+  become: true
+  become_method: sudo
+  roles:
+    - stancel.remove-config-from-nagios-server
+ 
+- hosts: backups
   become: true
   become_method: sudo
   roles:
     - stancel.remove-config-from-bareos-server
-    - stancel.remove-config-from-nagios-server
- 
-
 

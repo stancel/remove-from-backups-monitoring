@@ -13,7 +13,7 @@ Role Variables
 
 The hostname of the machine you are removing from being monitored by Nagios. Host names should not have spaces in them.
 
-	`host_name: "my-server" `  
+	`remove_config_from_nagios_server_host_name: "my-server" `  
 
 Dependencies
 ------------
@@ -34,7 +34,7 @@ or
 
 	- hosts: your_nagios_server
 	  vars:
-		host_name: "my-server-to-remove"
+		remove_config_from_nagios_server_host_name: "my-server-to-remove"
 	  roles:
 	    - stancel.remove-config-from-nagios-server 
 
@@ -46,4 +46,6 @@ BSD
 Author Information
 ------------------
 
-Brad Stancel
+[Brad Stancel](https://github.com/stancel)
+
+

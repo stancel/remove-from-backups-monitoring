@@ -13,11 +13,11 @@ Role Variables
 
 The hostname of the machine you are removing
 
-	`host_name: "hostname-of-machine-to-remove"'
+	`remove_config_from_bareos_server_host_name: "hostname-of-machine-to-remove"'
 
 The Bareos Archive Device location (or file path) where the backups volumes are stored for this host. Make sure you do NOT put a path here that has backup volumes for other hosts. Below is the default value that will be populated if not overridden.
 
-	`archive_device: "/z-storage/backups/{{ host_name }}"`
+	`remove_config_from_bareos_server_archive_device: "/z-storage/backups/{{ host_name }}"`
 
 Dependencies
 ------------
@@ -39,8 +39,8 @@ or
 
 	- hosts: your_bareos_server
 	  vars:
-		host_name: "hostname-of-machine-to-remove"
-		archive_device: "/path/to/bareos/backup/volumes/for/this/host/only"
+		remove_config_from_bareos_server_host_name: "hostname-of-machine-to-remove"
+		remove_config_from_bareos_server_archive_device: "/path/to/bareos/backup/volumes/for/this/host/only"
 	  roles:
 	    - stancel.remove-config-from-bareos-server
 
@@ -52,4 +52,4 @@ BSD
 Author Information
 ------------------
 
-Brad Stancel
+[Brad Stancel](https://github.com/stancel)

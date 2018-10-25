@@ -5,7 +5,7 @@
 # Fill in appropriate values below unless passing from a higher precedence
 
 # The hostname of the machine you are removing
-host_name: "hostname-of-machine-to-remove"
+remove_config_from_bareos_server_host_name: "hostname-of-machine-to-remove"
 
 
 #####     Optional Variables      #####
@@ -13,12 +13,7 @@ host_name: "hostname-of-machine-to-remove"
 # These variables are set with the below defaults in defaults/main.yml. 
 # Only uncomment and change them or pass values if you would like
 
-
 # The Bareos Archive Device location (or file path) where the backups volumes are stored for this host. 
 # *** Make sure you do NOT put a path here that has backup volumes for other hosts ***
-#archive_device: "/z-storage/backups/{{ host_name }}"
-
-
-
-
+#remove_config_from_bareos_server_archive_device: "/z-storage/backups/{{ remove_config_from_bareos_server_host_name }}"
 

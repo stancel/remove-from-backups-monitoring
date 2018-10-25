@@ -5,7 +5,7 @@
   become: true
   become_method: sudo
   file:
-    path: "/usr/local/nagios/etc/servers/{{ host_name }}.cfg"
+    path: "/usr/local/nagios/etc/servers/{{ remove_config_from_nagios_server_host_name }}.cfg"
     state: absent
     owner: root
     group: root

@@ -6,28 +6,24 @@
 
 
 #####     Required Variables      #####
-
+host_name: "Fill in"
 
 #####   Role - remove-config-from-bareos-server   #####
 
 # The hostname of the machine you are removing
-host_name: ""
+remove_config_from_bareos_server_host_name: "{{ host_name }}"
 
 # The Bareos Archive Device location (or file path) where the backups volumes are stored for this host. 
 # *** Make sure you do NOT put a path here that has backup volumes for other hosts ***
-#archive_device: "/z-storage/backups/{{ host_name }}"
+#remove_config_from_bareos_server_archive_device: "/z-storage/backups/{{ remove_config_from_bareos_server_host_name }}"
+
 
 #####   Role - remove-config-from-nagios-server    #####
 
 # The hostname of the machine you are removing from Nagios monitoring. Host names should not have spaces in them.
-#host_name: "my-server"   # Covered Above
+remove_config_from_nagios_server_host_name: "{{ host_name }}"   
 
 
-#####   Role - 3 vars    #####
-
-
-
-#####   Role - 4 vars    #####
 
 
 

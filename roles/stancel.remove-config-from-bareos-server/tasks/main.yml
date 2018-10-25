@@ -1,0 +1,39 @@
+---
+# tasks file for remove-config-from-bareos-server
+
+- name: "Remove backup folder {{ remove_config_from_bareos_server_archive_device }}"
+  become: true
+  become_method: sudo
+  file:
+    path: "{{ remove_config_from_bareos_server_archive_device }}"
+    state: absent
+    owner: bareos
+    group: bareos
+    mode: 0750
+
+- name: "Removing config files from Bareos Server"
+  become: true
+  become_method: sudo
+  file: 
+    path: "{{ item }}" 
+    state: absent
+  with_items:
+      - "/etc/bareos/bareos-dir.d/client/{{ remove_config_from_bareos_server_host_name }}-fd.conf" 
+      - "/etc/bareos/bareos-dir.d/fileset/{{ remove_config_from_bareos_server_host_name }}-FileSet.conf" 
+      - "/etc/bareos/bareos-dir.d/job/{{ remove_config_from_bareos_server_host_name }}-Backup.conf" 
+      - "/etc/bareos/bareos-dir.d/jobdefs/{{ remove_config_from_bareos_server_host_name }}-JobDefs.conf"  
+      - "/etc/bareos/bareos-dir.d/pool/{{ remove_config_from_bareos_server_host_name }}-Full-Pool.conf" 
+      - "/etc/bareos/bareos-dir.d/pool/{{ remove_config_from_bareos_server_host_name }}-Incremental-Pool.conf" 
+      - "/etc/bareos/bareos-dir.d/schedule/{{ remove_config_from_bareos_server_host_name }}-Schedule.conf" 
+      - "/etc/bareos/bareos-sd.d/device/File-{{ remove_config_from_bareos_server_host_name }}-Storage.conf"  
+      - "/etc/bareos/bareos-dir.d/storage/{{ remove_config_from_bareos_server_host_name }}-Storage.conf"  
+  notify: "restart bareos all"
+
+- name: "Debug Statement"
+  debug:
+   msg: "The files should now be deleted. This is required to trigger that notify for some reason."
+  notify: "restart bareos all"
+
+
+
+

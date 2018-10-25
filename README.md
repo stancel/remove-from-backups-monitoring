@@ -8,7 +8,7 @@ How to Use
 
 To use this playbook just run this command.
 
-	1. ansible-galaxy install -r requirements.yml -p roles/ (only needed if you want to download the roles)
+	1. ansible-galaxy install -r requirements.yml -p roles/ --force
 	2. ansible-playbook master.yml -e @vars/all_vars.yml -i hosts/production
 
 
@@ -39,8 +39,8 @@ Roles
 Additional Info
 ------------
 
-I have setup a bash profile alias to allow calling the playbook and choosing whether to reboot (yes/no as the first parameter argument)
+I have setup a bash profile alias to allow calling the playbook and passing the host_name of the server as the first parameter.
 
 ```
-alias remove-server='function _remove-server() { cd /Users/Brad/DevOps/Ansible_Playbooks/playbooks/remove-from-backups-monitoring; ansible-playbook master.yml --inventory-file=/Users/Brad/.ansible/hosts --extra-vars "host_name=$1"; };_remove-server'
+alias remove-server='function _remove-server() { cd /Users/Brad/DevOps/Ansible_Playbooks/playbooks/remove-from-backups-monitoring; ansible-playbook master.yml --inventory-file=/Users/Brad/.ansible/hosts -e @vars/all_vars.yml --extra-vars "host_name=$1"; };_remove-server'
 ```
